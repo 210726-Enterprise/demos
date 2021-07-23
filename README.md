@@ -23,18 +23,16 @@ Here you will find all of the notes from class aslong with study-guides, project
   > The Monday quizes serve as a review for all of the material covered in the week prior.
 
 - 1 hour lunch breaks are scheduled as follows:
-  - **Monday, Thursday, Friday**: 1pm - 2pm EST
-  - **Tuesday**: 12:45pm - 2pm EST
-  - **Wednesday**: 1pm - 3pm EST
+  - **Monday - Friday**: 1pm - 2pm EST
 
 | Time EST | Monday           | Tuesday | Wednesday | Thursday | Friday  |
 | :------- | ---------------- | ------- | --------- | -------- | ------- |
 | 10:00    | :pencil2:        |         |           |          |         |
 | 11:00    | :speech_balloon: |         |           |          |         |
-| 12:45    | :speech_balloon: | :pizza: |           |          |         |
+| 12:45    | :speech_balloon: |         |           |          |         |
 | 1:00     | :pizza:          | :pizza: | :pizza:   | :pizza:  | :pizza: |
-| 2:00     | :speech_balloon: |         | :pizza:   |          |         |
-| 3:00     | :speech_balloon: | :mag:   |           | :mag:    | :mag:   |
+| 2:00     | :speech_balloon: |         |           |          |         |
+| 3:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
 | 4:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
 | 5:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
 
