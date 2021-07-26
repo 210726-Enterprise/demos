@@ -25,19 +25,20 @@ Here you will find all of the notes from class aslong with study-guides, project
 - 1 hour lunch breaks are scheduled as follows:
   - **Monday - Friday**: 1pm - 2pm EST
 
-| Time EST | Monday           | Tuesday | Wednesday | Thursday | Friday  |
-| :------- | ---------------- | ------- | --------- | -------- | ------- |
-| 10:00    | :pencil2:        |         |           |          |         |
-| 11:00    | :speech_balloon: |         |           |          |         |
-| 12:45    | :speech_balloon: |         |           |          |         |
-| 1:00     | :pizza:          | :pizza: | :pizza:   | :pizza:  | :pizza: |
-| 2:00     | :speech_balloon: |         |           |          |         |
-| 3:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
-| 4:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
-| 5:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
+| Time EST | Monday           | Tuesday | Wednesday | Thursday | Friday     |
+| :------- | ---------------- | ------- | --------- | -------- | -----------|
+| 10:00    | :pencil2:        |         |           |          | :computer: |
+| 11:00    | :speech_balloon: |         |           |          |            |
+| 12:45    | :speech_balloon: |         |           |          |            |
+| 1:00     | :pizza:          | :pizza: | :pizza:   | :pizza:  | :pizza:    |
+| 2:00     | :speech_balloon: |         |           |          |            |
+| 3:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
+| 4:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
+| 5:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
 
 :pizza: = Lunch <br>
 :pencil2: = Quiz <br>
+:computer: = HackerRank <br>
 :speech_balloon: = 1-on-1 Interviews <br>
 `blank space` = lecture, demos & exercises <br>
 :mag: = self or group study
