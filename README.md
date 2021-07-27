@@ -3,11 +3,11 @@
 This is the repository for the remote Fullstack Java Enterprise Revature batch starting July 26th, 2021.
 Here you will find all of the notes from class aslong with study-guides, project guidelines, and more resources.
 
-### Most Recent QC/Interview Guide can be found [here](https://github.com/210726-Enterprise/demos/blob/main/week6/qc-questions.md) :star:
+### Most Recent QC/Interview Guide can be found [here](https://github.com/210726-Enterprise/demos/blob/main/week1/qc-questions.md) :star:
 
 > QC is important! It is meant to simulate the interview process. Check out [this guide on how to do well](https://github.com/210726-Enterprise/demos/blob/main/how-to-do-well-in-qc.md).
 
-### Slides can be found [here](https://docs.google.com/presentation/d/1lOrz4BWbZO4tkQlK94SQ08ARVwq9n5bCRLMNoEXTtec/edit?usp=sharing)
+### Slides can be found [here](https://docs.google.com/presentation/d/1Pom-iEo-CrCpUZzIeBftDcwHR1YRol-HEuLQ7wOJoiA/edit?usp=sharing)
 
 ### Environment Setup Guide can be found [here](https://github.com/bpinkerton/environment-setup).
 
@@ -25,19 +25,20 @@ Here you will find all of the notes from class aslong with study-guides, project
 - 1 hour lunch breaks are scheduled as follows:
   - **Monday - Friday**: 1pm - 2pm EST
 
-| Time EST | Monday           | Tuesday | Wednesday | Thursday | Friday  |
-| :------- | ---------------- | ------- | --------- | -------- | ------- |
-| 10:00    | :pencil2:        |         |           |          |         |
-| 11:00    | :speech_balloon: |         |           |          |         |
-| 12:45    | :speech_balloon: |         |           |          |         |
-| 1:00     | :pizza:          | :pizza: | :pizza:   | :pizza:  | :pizza: |
-| 2:00     | :speech_balloon: |         |           |          |         |
-| 3:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
-| 4:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
-| 5:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:   |
+| Time EST | Monday           | Tuesday | Wednesday | Thursday | Friday     |
+| :------- | ---------------- | ------- | --------- | -------- | -----------|
+| 10:00    | :pencil2:        |         |           |          | :computer: |
+| 11:00    | :speech_balloon: |         |           |          |            |
+| 12:45    | :speech_balloon: |         |           |          |            |
+| 1:00     | :pizza:          | :pizza: | :pizza:   | :pizza:  | :pizza:    |
+| 2:00     | :speech_balloon: |         |           |          |            |
+| 3:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
+| 4:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
+| 5:00     | :speech_balloon: | :mag:   | :mag:     | :mag:    | :mag:      |
 
 :pizza: = Lunch <br>
 :pencil2: = Quiz <br>
+:computer: = HackerRank <br>
 :speech_balloon: = 1-on-1 Interviews <br>
 `blank space` = lecture, demos & exercises <br>
 :mag: = self or group study
