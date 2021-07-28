@@ -1,5 +1,9 @@
 package com.revature.exceptions;
 
 public class NoodleSoupException extends Exception{
-    String message = "Whoopsie";
+    public String message;
+
+    public NoodleSoupException(String m){
+        this.message = m;
+    }
 }
