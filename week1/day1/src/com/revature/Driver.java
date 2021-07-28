@@ -41,6 +41,8 @@ public class Driver {
 
         System.out.println(noodleSoup.toString());
 
+        VarArgs.example();
+
 
 
 //        System.out.println(string1);
