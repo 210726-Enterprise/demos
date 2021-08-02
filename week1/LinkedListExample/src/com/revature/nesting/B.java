@@ -9,9 +9,14 @@ public class B extends A{
     private A a;
     private B b;
 
+    public String getSomethingPrivate(){
+        return super.getSomethingPrivate();
+    }
+
+
     @Override
-    public void something() {
-        // different implementation
+    public void printSomething() {
+        super.printSomething();
     }
 
     @Override

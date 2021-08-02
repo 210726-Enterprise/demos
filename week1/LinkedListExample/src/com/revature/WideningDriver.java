@@ -2,6 +2,8 @@ package com.revature;
 
 import com.revature.model.Nose;
 import com.revature.model.Person;
+import com.revature.nesting.A;
+import com.revature.nesting.B;
 import com.revature.nesting.C;
 
 public class WideningDriver {
@@ -49,28 +51,28 @@ public class WideningDriver {
 //        System.out.println("long value : "+ l);
 
 
-        Person person = new Person();
-        Nose nose = new Nose();
-        nose.setShape("Banana");
-        nose.setPierced(true);
-        person.setName("Brandon");
-        person.setNose(nose);
-
-        System.out.println("Name: " + person.getName());
-        System.out.println("Nose: " + person.getNose().isPierced() + " " + person.getNose().getShape());
-
-
-        Person person2 = new Person(
-                "Squdward",
-                new Nose(
-                        "Eggplant",
-                        true
-                )
-        );
-
-        System.out.println(person2);
-
-        System.out.println(person2.equals(person));
+//        Person person = new Person();
+//        Nose nose = new Nose();
+//        nose.setShape("Banana");
+//        nose.setPierced(true);
+//        person.setName("Brandon");
+//        person.setNose(nose);
+//
+//        System.out.println("Name: " + person.getName());
+//        System.out.println("Nose: " + person.getNose().isPierced() + " " + person.getNose().getShape());
+//
+//
+//        Person person2 = new Person(
+//                "Squdward",
+//                new Nose(
+//                        "Eggplant",
+//                        true
+//                )
+//        );
+//
+//        System.out.println(person2);
+//
+//        System.out.println(person2.equals(person));
 
 
         // User
@@ -106,8 +108,13 @@ public class WideningDriver {
         */
 
 
-        C newC = new C();
+//        C newC = new C();
+//
+//        System.out.println(newC.getSomething());
+        B b = new B();
 
-        System.out.println(newC.getSomething());
+        b.printSomething();
+        System.out.println(b.getSomethingPrivate());
+
     }
 }
