@@ -179,7 +179,7 @@ mylist.add(new Person()); // what happens?
   * `finalize()`: finalize method is used just before an object is destroyed and called just prior to garbage collection.
   * `finally`: finally, a key word used in exception handling, creates a block of code that will be executed after a `try/catch` block has completed and before the code following the `try/catch` block. The `finally` block will execute whether or not an exception is thrown. For example, if a method opens a file upon exit, then you will not want the code that closes the file to be bypassed by the exception-handling mechanism. This finally keyword is designed to address this contingency.
 * `throw` vs `throws` vs `Throwable`?
-  * `Throwable` - the root interface of exceptions, allow a class to be "thrown"
+  * `Throwable` - the root class of exceptions, allow a class to be "thrown"
   * `throws` - keyword in method signature after params that declare which exception the method might throw
   * `throw` - the keyword that will actually "throw" an exception in code
 * What is try-with-resources? What interface must the resource implement to use this feature?
