@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>HelloJDBC</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <properties>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+  		<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <dependencies>
+  		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.19</version>
+		</dependency>
+  		
+  </dependencies>
+  
+  <!-- 
+  	POM ?
+  		Project Object Model
+  		
+  		Maven is our dependency manager and our build automation tool. We give up control so that 
+  			we don't need to configure our build paths or where our dependencies are added. 
+  			
+  		We need to inform Maven on what we want out project to be. We use the pom.xml to provide 
+  			that information. 
+   -->
+  
+  
+  <!-- 
+  		XML:
+  			eXtensible Markup Language 
+  			A set of nested descriptors to model data. 
+  			
+  			Markup languages are ways of annotating documents. HTML and XML are examples of these. 
+  			HTML is designed for displaying documents (used for webpages)
+  			XML is designed for storing information. 
+  			Both HTML and XML use tags and attributes to provide metadata to teh document. 
+  			
+  			HTML has standard tags e.g. <p>, <h1>, 
+  			<p>
+  				Customer with name Bob and age 16
+  			</p> 
+  			
+  			(This won't work: <my-paragraph>)
+  			
+  			XML allows us to define whatever tags we want. 
+  			
+  				<customer xmlns= "uniqueValue">
+  					<name>Bob</name>
+  					<age>16</age>
+  					<city xmlns= "anotherUniqueValue" >
+  						<name>Lisbon</name>
+  					</city>
+  				</customer>
+  				
+  			XML namespaces: 
+  				namespaces allow us to avoid naming conflicts. 
+  
+   -->
+  
+  
+</project>
