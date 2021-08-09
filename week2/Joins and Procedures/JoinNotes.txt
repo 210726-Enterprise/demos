@@ -1,0 +1,19 @@
+What is a join?
+	A join is when you put 2 tables together. Essentially. 
+	Based on some criteria like, where you have a foreign key
+	join it to another table where the primary key matches the 
+	foreign key. 
+
+	inner 
+	left outer
+	right outer
+	full outer 
+	few more like self 
+
+	Should be a query, not an operation. Creates another table
+	(does not change the underlying structure) 
+
+Why have joins?
+	We have multiple tables, which allow us to store efficiently. 
+	Joins allow us to combine tables to see information that is 
+	relevant to us in that specific query. 
