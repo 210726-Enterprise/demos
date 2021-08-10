@@ -1,6 +1,8 @@
 package com.revature;
 
-import com.sun.xml.internal.ws.util.StringUtils;
+// import com.sun.xml.internal.ws.util.StringUtils;
+
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -76,12 +78,12 @@ public class Driver {
         System.out.println(mp.nameContainsX.test("Beluga"));
 
 
-        Consumer<String> consume = word -> StringUtils.decapitalize(word);
-
-
-        //System.out.println(names);
-        names.forEach(word2 -> StringUtils.capitalize(word2));
-        names.forEach(StringUtils::capitalize);
+//        Consumer<String> consume = word -> StringUtils.decapitalize(word);
+//
+//
+//        //System.out.println(names);
+//        names.forEach(word2 -> StringUtils.capitalize(word2));
+//        names.forEach(StringUtils::capitalize);
 
         names.forEach(System.out::println);
 
