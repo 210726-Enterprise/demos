@@ -15,8 +15,6 @@ Additionally, you will need to build a simple CRUD web application (what objects
 - [ ] Jackson library (for JSON marshalling/unmarshalling)
 - [ ] Java EE Servlet API (v4.0+)
 - [ ] PostGreSQL deployed on AWS RDS
-- [ ] AWS CodeBuild
-- [ ] AWS CodePipeline
 - [ ] Git SCM (on GitHub)
 
 ## Functional Requirements
@@ -32,7 +30,6 @@ Additionally, you will need to build a simple CRUD web application (what objects
 - [ ] Generated Jacoco reports that display coverage metrics
 - [ ] Usage of the java.util.Stream API within your project
 - [ ] Custom ORM source code should be included within the web application as a Maven dependency
-- [ ] Continuous integration pipelines that builds some main branch each project (the ORM and the web app, separately)
 
 ## Bonus Features
 
