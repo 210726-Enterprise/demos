@@ -71,6 +71,7 @@
   - 404: Not Found
   - 405: Method not allowed
   - 415: Unsupported media type
+  - 418: I'm a teapot.
   - 451: Unavailable for legal reasons
 - 500-599: server error
   - 501: Not implemented

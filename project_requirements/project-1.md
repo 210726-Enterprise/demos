@@ -4,7 +4,7 @@
 
 Your first project will be to create a custom object relational mapping (ORM) framework. This framework will allow for a simplified and SQL-free interaction with the relational data source. The requirements of the project are purposefully vague, the intention is to allow for you to be creative in your implementation of this framework. There are many ways that this task can be approached, and you are encouraged to explore existing Java ORM implementations in order to get some inspiration. The minimum requirement for the custom ORM is to abstract JDBC boilerplate logic from the application which uses it.
 
-Additionally, you will need to build a simple CRUD web application (what objects you CRUD is up to you and your team). You should leverage the Java EE Servlet API to expose endpoints that allow for interaction with the application.
+Additionally, you will need to build a simple CRUD web application (what objects you CRUD is up to you). You should leverage the Java EE Servlet API to expose endpoints that allow for interaction with the application.
 
 ## Tech Stack
 
@@ -15,8 +15,6 @@ Additionally, you will need to build a simple CRUD web application (what objects
 - [ ] Jackson library (for JSON marshalling/unmarshalling)
 - [ ] Java EE Servlet API (v4.0+)
 - [ ] PostGreSQL deployed on AWS RDS
-- [ ] AWS CodeBuild
-- [ ] AWS CodePipeline
 - [ ] Git SCM (on GitHub)
 
 ## Functional Requirements
@@ -32,7 +30,6 @@ Additionally, you will need to build a simple CRUD web application (what objects
 - [ ] Generated Jacoco reports that display coverage metrics
 - [ ] Usage of the java.util.Stream API within your project
 - [ ] Custom ORM source code should be included within the web application as a Maven dependency
-- [ ] Continuous integration pipelines that builds some main branch each project (the ORM and the web app, separately)
 
 ## Bonus Features
 
@@ -48,7 +45,7 @@ Additionally, you will need to build a simple CRUD web application (what objects
 
 ## Presentation
 
-- Finalized version of custom ORM and web application must be pushed to personal repository within this organization by the presentation date (August 20th, 2021)
+- Finalized version of custom ORM and web application must be pushed to personal repository within this organization by the presentation date (August 24th, 2021)
 - 10-15 minute live demonstration of the web application (that leverages your custom ORM); demonstration will be performed using PostMan to query your API's endpoints
 
 ### Resources for researching ORMs
