@@ -32,7 +32,6 @@ Other requirements:
 Suggested bonus goals:
 - Deploy API using ECS w/ Docker (instead of Elastic Beanstalk)
 - Secure your Java API using Spring Security
-- Unit test your UI application's JS using the Jest testing framework
  
 ## Other Thoughts
 The project concepts must be approved by the trainer. Remember to keep user stories clear and unambiguous. Keep in mind that you only have 2 weeks to work on this project so make your MVP something attainable. In addition to your project proposal, teams should also structure themselves with one team leader and a person or persons who fulfill the role of Gitflow manager and DevOps engineer.  Lastly, avoid the temptation to divide work into "API" and "UI", all associates must implement logic on both sides of the stack! 
