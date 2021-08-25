@@ -39,4 +39,4 @@ The project concepts must be approved by the trainer. Remember to keep user stor
 
 ## Presentations
 
-Presentations will occur on the morning of Monday, June 14th, 2021. All team members must have a speaking role in the presentation of the application, and a PowerPoint slideshow is encouraged to accompany your presentation.
+Presentations will occur on the morning of Friday, September 10th, 2021. All team members must have a speaking role in the presentation of the application, and a PowerPoint slideshow is encouraged to accompany your presentation.
