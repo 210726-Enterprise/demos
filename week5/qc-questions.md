@@ -1,4 +1,4 @@
-# Upcoming QC Questions for Monday August 28th:
+# Upcoming QC Questions for Monday August 30th:
 
 > Topics: <br>
 >
@@ -98,8 +98,6 @@
 
 15. Explain the MVC architecture and how HTTP requests are processed in the architecture
 
-16. What is the role of the DispatcherServlet? What about the ViewResolver?
-
 17. List some stereotype annotations. What are the differences between these?
 
 18. How would you declare which HTTP requests you’d like a controller to process?
@@ -107,8 +105,6 @@
 19. What is the difference between @RequestMapping and @GetMapping?
 
 20. How to declare the data format your controller expects from requests or will create in responses?
-
-21. What annotation would you use to bypass the ViewResolver?
 
 22. How would you extract query and path parameters from a request URL in your controller?
 
