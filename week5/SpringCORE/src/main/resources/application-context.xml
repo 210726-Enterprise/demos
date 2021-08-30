@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Spring Stereotypes -->
+    <!--    @Component -> general use class bean wiring-->
+    <!--    @Service -> more specific bean wiring -> service-->
+    <!--    @Controller -> more specific bean wiring -> servlets-->
+    <!--    @Repository -> more specific bean wiring -> dao-->
+
+    <!--@Bean similar to @Component but applicable to methods -->
+
+    <!-- bean definitions here -->
+
+    <!-- CONSTRUCTOR INJECTION -->
+    <bean name="MainBean" class="com.revature.MainBean">
+        <constructor-arg ref="MotdServiceBean" name="motdServiceBean"/>
+    </bean>
+
+    <!-- SETTER INJECTION -->
+<!--    MotdServiceBean -->
+    <bean name="MotdServiceBean" class="com.revature.service.MotdServiceBean" init-method="initMotds">
+        <property name="defaultMotdIndex">
+            <value>
+                4
+            </value>
+        </property>
+    </bean>
+
+</beans>

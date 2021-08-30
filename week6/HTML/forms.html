@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+
+    <main>
+        <form action="https://google.com" method="GET">
+            <fieldset>
+                <legend>Your Details</legend>
+
+                <label>
+                    Name:
+                    <input type="text" name="username" maxlength="50" required/>
+                </label>
+                <br><br>
+
+                <label>
+                    Email:
+                    <input type="text" name="user-email" maxlength="250" placeholder="Please enter your email address">
+                </label>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Your Review</legend>
+
+                <p>
+                    <label for="hear-about">How did you hear about us?</label>
+                    <select name="referred" id="hear-about">
+                        <option value="">Please make a selection</option>
+                        <option value="google">Google</option>
+                        <option value="friend">Friend</option>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
+
+                <p>
+                    Would you visit again?
+                    <br />
+
+                    <label>
+                        Yes
+                        <input type="radio" name="will-return" value="yes">
+                    </label>
+                    <br>
+                    <label>
+                        No
+                        <input type="radio" name="will-return" value="yes">
+                    </label>
+
+                    <br>
+                    <label>
+                        Please provide additional comments!
+                        <textarea name="comments" cols="30" rows="10"></textarea>
+                    </label>
+                </p>
+
+            </fieldset>
+
+            <input type="submit" value="Submit Review"/>
+        
+        </form>
+
+    </main>
+
+    <br>
+
+    <footer>
+
+        <a href="https://yahoo.com">This is a link to Yahoo</a>
+
+        <br>
+
+        <a href="lists.html">Go to the lists page</a>
+
+        This is some semi-important text.  But not as importnant as main.
+    </footer>
+    
+</body>
+</html>

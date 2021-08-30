@@ -1,0 +1,70 @@
+.main{
+	background-color:whitesmoke;
+	margin-top:6.875rem;
+	padding-left:6.25rem;
+	min-width:75rem;
+	height:31.25rem;
+}
+
+.ryu{
+	float:left;
+}
+.hadouken,
+.ryu-ready,
+.ryu-still,
+.ryu-throwing,
+.ryu-cool{
+	background-repeat: no-repeat;
+}
+
+.ryu-ready,
+.ryu-still,
+.ryu-throwing,
+.ryu-cool{
+	width:41.188rem;
+	height:30.875rem;
+}
+
+.ryu-ready,
+.ryu-throwing,
+.ryu-cool{
+	display:none;
+}
+
+.hadouken{
+    background-image: url('../images/hadouken.gif');
+	float:right;
+	position: relative;
+	z-index: 100;
+}
+
+.ryu-ready{
+	background-image: url('../images/ryu-ready-position.gif');
+}
+
+.ryu-still{
+	background-image: url('../images/ryu-standing-still.png');
+}
+
+.ryu-throwing{
+	background-image: url('../images/ryu-throwing-hadouken.png');
+}
+
+.ryu-cool{
+	background-image: url('../images/ryu-cool.gif');
+}
+
+.instructions {
+	height: 30.875rem;
+	width: 12rem;
+	position: absolute;
+	left: 38rem;
+	top: 6.875rem;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 1.8rem;
+}
+
+.instructions p + p {
+	position: absolute;
+	bottom: 0;
+}

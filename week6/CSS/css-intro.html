@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Cascading Style Sheets</title>
+
+    <!-- Internal Styling -->
+    <style>
+        /*
+        This is a multi line comment in CSS
+        */
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: auto;
+            max-width: 800px;        
+        }
+
+        /*
+        Just ID's are selected with a #
+
+        Classes are selected with a .
+        */
+        #my-special-div {
+
+            color: aqua;
+            background-color: black;
+        }
+
+        .my-special-class {
+            border: 2px dashed rebeccapurple;
+            padding: 3%;
+            line-height: 18px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+    <!-- External styling-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+
+    <!-- Let's create some content here and stylize it in 3 different ways-->
+
+    <h1>Intro to CSS</h1>
+
+    <p>
+        <abbr title="Cascading Style Sheets">CSS</abbr> can be included in 3 different ways:
+
+        <ol>
+            <li>Inline Styling with the <code>style</code> attribute. This is not preferred because it's not maintainable.</li>
+            <li>Internal stylesheets using the <code>style</code> element in the head of our html page</li>
+            <li>External stylesheets using the <code>link</code> element in the head of our html page</li>
+        </ol>
+                <!-- Precedence: Inline always overrides any otherwise specified CSS rules.
+                ID's will take precedence OVER classes -->
+    </p>
+
+    CSS rules are defined by key value pairs, separated by a colon ( : ).
+    <p style="color:forestgreen">This is an example of the color rule.</p>
+    <span style="color:hotpink">Some more text here to demonstrate this</span>
+
+    <p>The above is an example of inline styling...The following is an example of <strong>Internal Styling</strong></p>
+
+    <h2>Selectors</h2>
+        <div class="my-special-class">
+            <p>
+                This is an example of how a div divides and containerizes our code, so that is styling is easier since we're selecting a container.
+            </p>
+        </div>
+        
+    <!-- IMPORTANT!!! ID's are used to identify ONE element, whereas a Class is used to identify multiple elements -->
+
+    <h4>ID's and Selectors:</h4>
+        <!-- Write a # and the name of your particular id to auto create a div with a respective ID-->
+        <div id="my-special-div">
+
+            <p>We are able to select elements by MORE than just their tag (element selector).  We can give elements particular ID's or class</p>
+
+        </div>
+
+        <div class="my-special-class">
+            <p>Part of my special class!</p>
+
+        </div>
+
+</body>
+</html>

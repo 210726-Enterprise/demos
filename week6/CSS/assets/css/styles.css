@@ -1,0 +1,17 @@
+@import url('for-import.css');
+
+body {
+    background-color: rgb(106, 97, 156);
+}
+
+/*
+Any code written in external CSS can be overridden by internal OR inline CSS
+*/
+#my-special-div {
+    /*
+    Anything you write here will ALSO style the element with this ID,
+    but just remember that internal styling or inline styling will overwrite this.
+
+    */
+    background-color: rgb(78, 47, 10);
+}

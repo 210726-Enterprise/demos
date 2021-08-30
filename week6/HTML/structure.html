@@ -1,0 +1,112 @@
+<!--
+    This an HTML comment;
+    it can be multi-line
+-->
+<!--
+    HTML stands for HyperText Markup Language.  It is used to structure content on a webpage.
+-->
+<!DOCTYPE html>
+<!-- 
+        The DOCTYPE directive must be the very first non-comment line
+        declared within our HTML documents (even before the <html> tag).
+        It is not a tag, it is a directive, or instructon to the browser
+        about what version of HTML the page is written in.
+    -->
+<html>
+
+<head>
+    <!--
+            <head>
+                contains information about the page, rather than the information shown.
+                We can include some information within the head such as:
+
+                - <style> tag to apply internal CSS styling to the webpage
+                - <link> tag for making use of an external resource (external CSS)
+                - <script> tag for making use of JavaScript, which makes our webpages more dynamic
+                - <meta> tag for including meta-informmation about the content of the page -- used more for SEO purposes
+                - <title> tag for the title of the webpage.
+        -->
+    <title>HTML Basics: Structure</title>
+
+</head>
+
+<body>
+
+    <!--
+            <body>
+                Contains info/content that will be displayed to the user,
+                when rendered by the browser
+        -->
+    <!--
+            HTML tags/elements
+            Used to indicate how content should be displayed...
+            Usually they require an opening and a closing tag.  Those that do NOT require a closing tag
+            are called self-closing tags.
+
+                <p> paragraph
+                <h#>    headings (range from 1-6, 1 being the largest)
+                <div>   division/divider; used to group related elements together
+                    ** The <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element.
+                <img>   image (self-closing)
+                <a>     anchor; used to create links to other webpages, or to sections of the current page
+                <br>    line break (self-closing)
+                <hr>    horizontal rule
+                <input> creates a field for user input or some sort of [text, checkbox, etc.] (self-closing)
+        -->
+
+    <h1>This is the main heading</h1>
+    <p>
+
+        This text might be used to introduce the rest of the page...If the page is long enough
+
+
+
+
+        we can make use of subheadings and further organize our webpage's content.
+
+    </p>
+    <h2>This is the subheading</h2>
+
+    <p>
+
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+        Blah Blah
+    </p>
+
+    <!-- HTML does not care about whitespace
+            We use the break tag <br /> to accomplish this 
+        -->
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h3>This is an even smaller heading, giving the appearance of nested content.</h3>
+
+    <p>4 &lt; 5</p>
+    <p>HTML &amp; CSS</p>
+    <p>Here is some&nbsp;text</p>
+
+    <!--
+            Escape characters
+                There are some characters that are used in and reserved
+                for HTML code. If you want to use them in your content
+                then you need to use their escape character equivalents.
+                <       -   Less-than       &lt;        &#60;
+                >       -   Greater-than    &gt;        &#61;    
+                &       -   Ampersand       &amp;       
+                ""      -   Quotations      &quot;
+                        -   Space           &nbsp;
+        -->
+</body>
+
+
+</html>

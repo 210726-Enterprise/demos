@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+
+<body>
+
+    <!-- HTML Images <img>
+        
+        Used to add an image to a web page.  It is a self-closing tag, so no need to provide a closing tag.
+
+        Attributes of <img> (not all-inclusive)
+
+            src     =   path to the image file (can be local or external)
+            alt     =   provides a text description if the image does not load (also used with screen readers)
+            title   =   used to provide titular info when the image is hovered over by the cursor
+            width   =   specifies the desired width of the image
+            height  =   specifies the desired height of the image
+            align*   =   (DEPRECATED) used to align the image with any surrounding content (bad practice to use; use CSS instead)
+    -->
+
+    <!-- <img> is an inline element, but <p> is a block level element-->
+
+
+    <div>
+        <p>
+            <img src="assets\images\quokka.jpg" alt="It's a quokka" width="400" height="250"
+                title="A quokka is a marsupial">
+        </p>
+        <p>
+            <img src="assets\images\earth-spinning.gif" width="250" alt="Earth Spinning">
+        </p>
+    </div>
+
+    <div>
+        <img src="assets\images\bird-of-paradise-flower.jpg" height="100" width="100">
+
+        <p>
+            Strelitzia, whose common name is the bird of paradise flower, because of a resemblance of its flowers
+            to birds-of-paradise (Paradisaea raggiana). The species S. nicolai is the largest in the genus, reaching
+            10m tall, with stately white and blue flowers; the other species typically reach 2-3.5m tall, except
+            S. caudata which is a tree of a typically smaller size than S. nicolai. The leaves are large, 30–200cm
+            long and 10–80cm broad, similar to a banana leaf in appearance but with a longer petiole, and arranged
+            strictly in two ranks to form a fan-like crown of evergreen foliage. The flowers are produced in a
+            horizontal inflorescence emerging from a stout spathe.
+        </p>
+        <br>
+        <hr/>
+        <br/>
+        <img src="assets\images\bird-of-paradise-flower.jpg" height="100" width="100"/>
+
+        <p>
+            Strelitzia, whose common name is the bird of paradise flower, because of a resemblance of its flowers
+            to birds-of-paradise (Paradisaea raggiana). The species S. nicolai is the largest in the genus, reaching
+            10m tall, with stately white and blue flowers; the other species typically reach 2-3.5m tall, except
+            S. caudata which is a tree of a typically smaller size than S. nicolai. The leaves are large, 30–200cm
+            long and 10–80cm broad, similar to a banana leaf in appearance but with a longer petiole, and arranged
+            strictly in two ranks to form a fan-like crown of evergreen foliage. The flowers are produced in a
+            horizontal inflorescence emerging from a stout spathe.
+        </p>
+        <br>
+        <hr/>
+        <br/>
+        <img src="assets\images\bird-of-paradise-flower.jpg" height="100" width="100" style="float:right"/>
+
+        <p>
+            Strelitzia, whose common name is the bird of paradise flower, because of a resemblance of its flowers
+            to birds-of-paradise (Paradisaea raggiana). The species S. nicolai is the largest in the genus, reaching
+            10m tall, with stately white and blue flowers; the other species typically reach 2-3.5m tall, except
+            S. caudata which is a tree of a typically smaller size than S. nicolai. The leaves are large, 30–200cm
+            long and 10–80cm broad, similar to a banana leaf in appearance but with a longer petiole, and arranged
+            strictly in two ranks to form a fan-like crown of evergreen foliage. The flowers are produced in a
+            horizontal inflorescence emerging from a stout spathe.
+        </p>
+
+        <!-- Cross Site Scripting XSS aka JavaScript Injection-->
+        <img src="fakelink-hasjdkfhkjdshfj.com" onerror="console.log('You have been hacked, you owe me 1 bitcoin');">
+
+    </div>
+    <div>
+
+        <h1> iFrames!</h1>
+        <p>An iFrame is like a little windows placed on a webpage.  iFrame is short for inline frame.</p>
+        <p>The most common usage of iframe is by embedding a google maps iframe.</p>
+
+        <br><br><br>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380513.7159859942!2d-88.01214778988322!3d41.83339250495681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1625598253532!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <br><br><br>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+</body>
+
+</html>

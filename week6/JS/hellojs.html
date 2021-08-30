@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello JS</title>
+</head>
+<body>
+    <h1>Hello JavaScript Example!</h1>
+
+    <!-- I want to print some p element 50 times "Some repetative statement"-->
+    <p>Some repetative statment</p>
+
+
+    <!-- It's importnatnt to alwasys put the script tag at the bottom -->
+    <script>
+    
+        for(var i=0; i<50; i++) {
+            
+            document.write("<br><br>");
+            document.write("Some repetative statment");
+        }
+
+        console.log("look at this console log!");
+        console.warn("pineapples do NOT go on pizza");
+        console.error("oh no something has gone horribly wrong");
+
+
+        // This a single line comment in JS
+        /*
+        This is a multi
+        line
+        comment
+        */
+
+        /**
+        * This would be a documentation comment
+        which automatically populates the *'s in a .js file
+        */
+
+        // The document object represent the HTML doc that is displayed in the window.
+        // We can manipulate the document object with JavaScript.
+        // Access to and the modification of document content is called DOM Manipulation.
+        // DOM =  Document Object Model 
+
+        // This is a single line comment
+        /*
+        This is a mulitline comment
+        */
+        console.log("look at this console log!")
+        console.warn("pineapples do NOT go on pizza.")
+        console.error("oh no something has gone wrong")
+
+        /*
+            What's a Scripting language?
+                a snippet of code that auotmates some functionality.  It is NOT a complete applicaiton or program
+                ..it's just a snippet of code.
+
+            So then what is JavaScript?
+
+                JavaScript is a programming/scripting language originally designed to provide functionality
+                to web pages; effectively making those webpages dynamic. It allows website clients
+                to run code from THEIR machines instead of always returning to a server for new
+                information/calculations
+
+                JavaScript is a scripting language.  Traditional languages like C++ are compiled BEFORE
+                they're run into executable binary form.  The compiler is our best friend because it checks for errors
+                before the process is complete.
+
+                Scripting languages, by contrast are executed line by line by an INTERPRETER.
+
+                JS is an interpreted scripting/programming language which allows more dynamic functionality to web pages.
+                JS is interpreted by the Browser...Google Chrome's interpreter is v8 engine.
+                FireFox's is SpiderMonkey.
+
+                Later, JS got so popular, that someone ripped out the v8 engine (Chrome's interpreter) and wrapped
+                it in a C++ shell.  Thus Node.js was born around 2009. 
+
+                Features of JS:
+                    - It's object oriented
+                    - Supports Fucntional Programming
+                    - Loosely typed 
+                        (a variable can hold ANY data type)
+                    - it's dynamic (you can easily control JS during runtime)
+                        > you can modify the structure of objects while the program is running MORE than in 
+                        non-dynamic languages.
+                    - originally JS was built for DOM manipulation.
+                        > The DOM is a virtual representaiton of the HTML page
+                    - Generally JS is either interpreted by 1 of 2 things: browser, or node.js
+
+
+        */
+    </script>
+    <script src=""></script>
+</body>
+</html>
