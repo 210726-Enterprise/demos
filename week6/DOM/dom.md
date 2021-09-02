@@ -173,3 +173,130 @@ Event capturing is the opposite of bubbling, instead of going from the target el
 - Follows the top to bottom approach
 
 Capturing only works with event handlers that are registered with .addEventListner() with an added third argument that is set to true
+
+# Challenge, as a team
+1. Create an HTML Page with a form
+2. Have the user input some information about themselves
+3. On submit, take in the users information, and display it on the page
+4. If there is already some user info on the page, the new info should be rendered below the orginal
+
+# Asynchronous JavaScript:
+program does not need to wait for a specific task that takes a long time
+
+It simply start executing a function, then move onto the next function while it finishes
+- You can send a request/start a lengthy function and forget about it
+- Then when you receive the response/the function finishes you can handle it
+- You program does not need to wait for the response in the mean time
+
+## How Asynchronous Javascript Works
+
+Javascript implements a stack where function calls are stored
+- It uses a single thread to add, and call functions on the stack one at a time, until the stack is empty
+- This is how basic synchronous programming works
+
+Javascript also has a built in queue, and the browser/node runtime environment had extra built in threads that can be used by javascript, the queue is used by the event loop
+
+## Javascript Event Loop
+
+When an async call happens, Javascript allows the browser thread/web api to handle the specific call, while moving on in the stack
+
+Once the Web API is done processing the function, it will return the call, or the response to the queue, then the next time the callstack is empty, the event loop will return the response/callback from the queue
+
+### Basic Animation of the Event Loop
+
+![Event Loop](gif14.1.gif)
+
+https://blog.bitsrc.io/understanding-asynchronous-javascript-the-event-loop-74cd408419ff
+
+# Promises
+
+Javascript uses promises for async operations, they are placeholders for future values. Many async function return them implicitly
+
+Promises in Javascript are objects, and you can create them using the new keyword
+
+Promises take a callback function called the **executor** which automically runs when the object is created.
+- The executor also takes in two callbacks, resolve and reject
+    - `resolve(value)` reeturns the result of the job once it has successfuly finished
+    - `reject(error)` is called if there is an error with processing the job
+
+Promises have a property of `.status` which gives information about the state of the object. The object can be in one of three states:
+- pending
+- fulfilled
+- rejected
+
+The promise object connects the executor, and any consuming function which will receive the result or an error from the promise
+
+You would use the `.then()`, `.catch()` and `.finally()` methods on the promise object to consume the results or errors of the promise object
+
+# AJAX (Asynchronous Javascript and XML):
+the process of exchanging data from a web server asynchronously with the help of XML, HTML, CSS, and Javascript
+- We use it to load data from a server, and selectively update some part of a webpage without reloading
+- Uses the browsers build-in XMLHttpRequest object (XHR), to send and recieve data from webservices asynchronously
+
+The AJAX Workflow
+
+1. A client event occurs on webpage
+2. Javascript creates an XMLHttpRequest object
+3. The XMLHttpRequest Object makes a async request to the server
+4. The server processes the received request
+5. The server creates a response and sends data back to the browser
+6. The browser processes the returned data using Javascript
+7. The page content is updated with Javascript
+
+There are 4 steps in creating an AJAX request
+
+1. Create a XMLHttpRequest Object with `new XMLHttpRequest()`
+2. Set the readystatechange callback function
+3. Use the `.open(method, url, async)` method of the XHR object to open up the connection
+    - Method is a string specifying which HTTP Method the request is using (GET, POST, PUT..)
+4. Use the `.send()` method to send the request to the server to be processed
+
+The server then sends back a response which we can process, this is returned in the form of:
+- responseText: the response as a string
+- responseXML: the response as XML
+- status: the status code for the response
+- statusText: text representation of the status code
+
+The readyState property has 5 states:
+- 0 not initialized
+- 1 connection established
+- 2 request received by the server
+- 3 server is processing request
+- 4 request finished, response ready
+
+You can set the function onreadystatechange to a custom function to handle the reponse when it is ready
+
+# JSON(Javascript Object Notation):
+data exchange format that is easy to read for humans and machines
+- Stringified Javascript Object
+
+JSON is useful for:
+- Transmitting data between a server and web application
+- Transmitting serilized data
+- Performing async call witong needing refresh the page
+- Restful API's
+
+# Working with JSON in AJAX
+
+The XHR object can only send text data, however we can send JSON by serializing it, with JSON.stringify()
+- JSON.stringify will convery the JSON object into a string
+
+To get JSON from a reponse body, we can to use JSON.parse() which will covert serialized text data to a JSON object
+
+# fetch
+
+Fetch is a more modern and verstile way of making AJAX requests
+
+The Fetch API is provided by the window object, and provides the `.fetch()` method
+
+- `.fetch()` is used to send requests and returns a promise that is retrieved from the response
+- Successful requests get resolved, and returned promise will have a Reponse Body
+- Requests that return an error HTTP-Status will be rejected
+
+There are various methods you can use to access the response body of successful request:
+- `response.text()` read the response and return as text
+- `response.json()` parse the response as json
+- `response.formData()` returns the response as FormData object
+- `response.blob()` returns the response as Blob, binary data with type
+- `response.arrayBuffer()` returns the response as an ArrayBuffer (low level representation of binary data)
+
