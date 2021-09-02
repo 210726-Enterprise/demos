@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Hello Event Object</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h3>Please sign in</h3>
+
+    <form id="login">
+        <label for='username'>Username: </label>
+        <input id='username' type='text' name='username' onkeypress="printPressed(event)"/>
+        <label for='password'>Password: </label>
+        <input id='password' type='password' name='password'/>
+        <input type='submit' value='Login'/>
+    </form>
+    <script src='login.js'></script>
+</body>
