@@ -300,3 +300,10 @@ There are various methods you can use to access the response body of successful 
 - `response.blob()` returns the response as Blob, binary data with type
 - `response.arrayBuffer()` returns the response as an ArrayBuffer (low level representation of binary data)
 
+# Challenge as a team
+1. Create an HTML page that has an input field and a button
+2. On submission, make a call to the PokeAPI to get the information about the pokemon input in the HTML
+    - https://pokeapi.co/api/v2/pokemon/{id or name}/
+3. Once you receive the information, display the pokemons name, and an image of the pokemon
+
+More information about the API: https://pokeapi.co/docs/v2#pokemon
