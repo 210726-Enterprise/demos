@@ -10,6 +10,7 @@ Most of the new features are focused around static typing (but not all).
 - Static Typing
 - Interfaces
 - Access modifiers
+  - TypeScript does not have a default access, instead public is the default access modifier
 - Decorators
   - Basically just annotations
 - etc

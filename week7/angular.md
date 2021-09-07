@@ -128,3 +128,73 @@ The `providedIn` property defines some configuration in regards to how this serv
 The Services classes contain methods to do whatever logic your application needs. It can be many methods or a single method. Whatever is needed by the app.
 
 Generally try to avoid Services becoming too complicated. Always look for opportunities to simply and abstract. You can split services into multiple if needed.
+
+### Databinding
+
+One of the very useful features that Angular offers is to conveniently pass data back and forth between the DOM and our TypeScript Components (or our logic).
+
+We often want to bind data that was retrieved from an HTTP request and display on the UI. We often want to receive new input from the user and pull it into our Components. And sometimes we may want to do both at the same time.
+
+#### One-Way Databinding
+
+Property/Attribute Binding & String Interpolation: The term to describe binding data from ts to our DOM.
+This is where we take input from our Component and render on the DOM in some fashion.
+
+The difference between these lies on the location of where data will be bound.
+If the information will be put in innerHTML, then we will use String Interpolation.
+Ex: Display a username in a paragraph tag.
+Syntax: Double Curly Braces
+
+```html
+<p>{{ username }}</p>
+```
+
+In the above example, `username` would be the name of a public member variable on the Component class.
+Note that the variable must be public, as otherwise, it cannot be bound.
+
+Instead, if you wish to bind data to an attribute of an HTML element, you would use property binding.
+Ex: Have a dynamic anchor tag that routes to a different URL depending on who is logged in
+Syntax: Square Brackets
+
+```html
+<a [href]="url">CLICK HERE</a>
+```
+
+In the above example, `url` would be also be a public member variable on the Component class.
+
+The other direction of one-way databinding is to bind DOM events to trigger methods in our TypeScript Component.
+This is called Event Binding.
+It uses parentheses for the syntax.
+
+Ex: Trigger a function when I click a button
+
+```html
+<button (click)="alert(e)">CLICK ME</button>
+```
+
+In the above example, `alert` is a public method on the Component class.
+You can pass parameters into the method. In this case, `e` is the event object that is passed into the method call.
+And unlike in standard HTML, the attribute name no longer has the `on` prefix.
+
+#### Two-Way Databinding
+
+This is a use-case where we want to receive input from the user and store that in a member variable of the Component.
+We can then further use that variable to bind back to the DOM if needed.
+
+The syntax is both square brackets and parentheses, as it combines both one-way databinding directions.
+Note that the attribute in the middle _must be_ `ngModel`, and it is case sensitive.
+Additionally, the order of the brackets is important, the square brackets must be on the outside.
+To help remember, I have heard many people refer to the syntax as "Banana in a box": [()]
+I would avoid using this terminology in professional situations.
+
+```html
+<input [(ngModel)]="username" />
+<p>{{ username }}</p>
+```
+
+In this above scenario, the contents of the input element will be bound to a variable called `username` on the Component class.
+We can do additional binding as we desire.
+
+This will allow our UI to dynamically update based on the value of the variable as it changes.
+
+Final Note: In order to use this, you _must_ import the FormsModule in your AppModule.
