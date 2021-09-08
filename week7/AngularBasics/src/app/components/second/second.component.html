@@ -1,0 +1,13 @@
+<input type="number" [(ngModel)]="money">
+
+<h4>{{money | currency: currencyType}}</h4>
+
+<input type="number" [(ngModel)]="time">
+<h4>{{time | date: 'full'}}</h4>
+
+<h4>{{currentTime | date: 'EEEE, MMMM, d, y, h:mm:ss:SSS a zzzz'}}</h4>
+
+<input type="number" [(ngModel)]="num1">
+<input type="text" [(ngModel)]="op" maxlength="1" size="1">
+<input type="number" [(ngModel)]="num2">
+<p>{{ { number1:num1, number2:num2 } | calculator: op}}</p>

@@ -1,0 +1,73 @@
+New Text!!!
+
+<h1>This is the Root Component</h1>
+<h3>This is the first Component <span highlight>bootstrapped</span> into our index.html</h3>
+
+<!-- Data Bindings -->
+
+<!-- Interpolation -->
+<h4>I say {{hello}}</h4>
+
+<!-- Event Binding -->
+<button (click)="testFunction()">Update Hello</button>
+<button (click)="saySomething()">Say Something</button>
+
+<hr>
+<!-- Property/Attribute Binding -->
+<div>
+  <a [href]="website">{{website}}</a>
+  <button (click)="changeWebsite()">Change Website</button>
+</div>
+
+<hr>
+
+<!-- Two-Way Data Binding -->
+<input type="text" [(ngModel)]="url" (change)="setEndpoint()">
+<a [href]="endpoint">{{url}}</a>
+<button (click)="setURL()">Set to Google</button>
+
+<hr>
+
+<!-- Directives -->
+
+<button (click)="showText()">Show Text</button>
+<p *ngIf="showParagraph">
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+  type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+  essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+  passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+<div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Character No.</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of marioCharacters">
+        <td>{{marioCharacters.indexOf(character) + 1}}</td>
+        <td highlight>{{character}}</td>
+        <td><button (click)="deleteCharacter(character)">Delete</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <input type="text" [(ngModel)]="newCharacter">
+  <button (click)="addCharacter()">Add Character</button>
+  <button (click)="clearText()">Clear Text</button>
+  <button (click)="removeCharacter()">Remove Last Character</button>
+
+  <hr>
+  <div>
+    <app-second></app-second>
+    <app-third></app-third>
+  </div>
+
+</div>
