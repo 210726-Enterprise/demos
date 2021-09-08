@@ -71,7 +71,7 @@ Everything you can do through the use of a Data Bind CAN be done in Vanilla Java
 	- ng g d /directives/myDirective
 
 - Component Directives, custom HTML tag, provide a custom view and functionality
-	- <app-root></app-root>
+	- <code><app-root></app-root></code>
 
 
 ## Pipe |
