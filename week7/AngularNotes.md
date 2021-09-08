@@ -80,9 +80,9 @@ a pipe will transform some sort of input into a different output before displayi
 
 10 | currency: 'USD'	->	$10.00
 
-ng generate pipe myPipe
-ng g p myPipe
-ng g c /pipes/myPipe
+- ng generate pipe myPipe
+- ng g p myPipe
+- ng g c /pipes/myPipe
 
 
 
