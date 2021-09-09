@@ -1,0 +1,15 @@
+table {
+    width: 50%;
+    margin: 0% 25%;
+    border: 1px solid black;
+}
+
+tr td:first-child {
+    text-align: right;
+    background-color: lightgreen;
+    padding: 0px 5px;
+}
+
+tr td:last-child {
+    text-align: center;
+}

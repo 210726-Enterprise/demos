@@ -1,0 +1,21 @@
+div {
+    text-align: center;
+}
+
+#navList {
+    list-style-type: none;
+}
+
+#navList li {
+    display: inline;
+    margin: 5px;
+    background-color: rgb(230, 230, 230);
+    border: 1px solid rgb(112, 112, 112);
+    padding: 5px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 100);
+    border-radius: 5px;
+}
+
+#navList a {
+    text-decoration: none;
+}

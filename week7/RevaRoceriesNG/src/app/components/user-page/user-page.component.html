@@ -1,0 +1,44 @@
+<h3>User Page</h3>
+
+<p>Feature under construction....</p>
+
+
+<div id="inputDiv">
+    <label for="usernameInput">Username:</label>
+    <input type="text" id="usernameInput" [(ngModel)]="username"><br>
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput" [(ngModel)]="password"><br>
+    <label for="firstNameInput">First Name:</label>
+    <input type="text" id="firstNameInput" [(ngModel)]="firstName"><br>
+    <label for="lastNameInput">Last Name:</label>
+    <input type="text" id="lastNameInput" [(ngModel)]="lastName"><br>
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" [(ngModel)]="email"><br>
+    <button (click)="addUser()">Add User</button>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th> <!-- Only displaying IDs just because I want to see them work. -->
+            <th>Username</th>
+            <th>Password</th> <!-- Definitely in a real application, I wouldn't just display a password. -->
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{user.userId}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="populateUserList()">Get Users</button>
