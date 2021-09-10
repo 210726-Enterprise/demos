@@ -1,7 +1,7 @@
 # Angular
-
+[Answers Link to GoogleDocs](https://docs.google.com/document/d/1kl-xw_FTehB3kqMSqz9dx7Vf12dFdzMPPnrg2JAw3Sk/edit)
 1.  What makes a “single page application” (SPA) different from a normal web page?
-    - terminal
+  
 2.  Explain the difference between server-side and client-side rendering
     
 3.  What are some features of the Angular framework?
