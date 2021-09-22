@@ -431,13 +431,13 @@ An exception (or exceptional event) is a problem that arises during the executio
     - In the above example, you provide explicit return values for each method that with likely be called during the test suite
     - For example, lets say we have a class that is dependent on classNameMock and a method that calls classNameMock.methodA() in its implementation. The code for calling the inital class method does not change, we are simply providing the data that is returned from the dependency.
 
-## SQL
+## [SQL](http://www.sqlcourse.com/intro.html)
 
 - SQL stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
 
 ### RDB Basics
 
-#### SQL Sublanguages
+#### [SQL Sublanguages](https://www.interviewsansar.com/sql-sub-languages/)
 
 - DDL – Data Definition Language.
   - CREATE
@@ -466,7 +466,7 @@ An exception (or exceptional event) is a problem that arises during the executio
   - ALTER SESSION
   - SET ROLL
 
-#### Database Objects
+#### [Database Objects](https://www.geeksforgeeks.org/database-objects-in-dbms/)
 
 - Table
   - This database object is used to create a table in database.
@@ -477,7 +477,7 @@ An exception (or exceptional event) is a problem that arises during the executio
 - Index
   - This database object is used to create a indexes in database. An index provides direct and fast access to rows in a table. Its purpose is to reduce the necessity of disk I/O by using an indexed path to locate data quickly.
 
-### Joins
+### [Joins](https://www.techonthenet.com/sql/joins.php)
 
 - A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
 - Different Types of SQL JOINs:
@@ -508,7 +508,7 @@ An exception (or exceptional event) is a problem that arises during the executio
 
 ### Functions/Procedures
 
-- Functions
+- [Functions](https://www.geeksforgeeks.org/sql-functions-aggregate-scalar-functions/)
   - For doing operations on data sql has many built-in functions, they are categorised in two categories and further sub-categorised in different seven functions under each category. The categories are:
     - Aggregate functions:
       - These functions are used to do operations from the values of the column and a single value is returned.
@@ -530,7 +530,7 @@ An exception (or exceptional event) is a problem that arises during the executio
         - FORMAT()
     - User Defined Functions:
       - Users can also create their own functions to perform custom operations on data.
-- Procedures
+- [Procedures](https://www.w3resource.com/sql/sql-procedure.php)
   - A procedure (often called a stored procedure) is a subroutine like a subprogram in a regular computing language, stored in database. SQL procedures can be used to create simple scripts for quickly querying transforming, updating data, generating basic reports, improve application performance, modularizing applications, and improve overall database design, and database security.
   - Advantages
     - Can contain SQL Procedural Language statements and features which support the implementation of control-flow logic around traditional static and dynamic SQL statements.
@@ -548,7 +548,7 @@ An exception (or exceptional event) is a problem that arises during the executio
     - Stored procedure languages from different vendors have different levels of sophistication. For example, Oracle's PL/SQL has more language features and built-in features than Microsoft's T-SQL.
     - Tool support for writing and debugging stored procedures is often not as good as for other programming languages, though it depends on vendors and languages.
 
-### Constraints
+### [Constraints](https://www.w3schools.com/sql/sql_constraints.asp)
 
 - SQL constraints are used to specify rules for the data in a table. Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
 - The following constraints are commonly used in SQL:
@@ -567,7 +567,7 @@ An exception (or exceptional event) is a problem that arises during the executio
   - CREATE INDEX
     - Used to create and retrieve data from the database very quickly
 
-### Relationships
+### [Relationships](https://vladmihalcea.com/database-table-relationships/)
 
 - When creating a database, common sense dictates that we use separate tables for different types of entities. Some examples are: customers, orders, items, messages etc... But we also need to have relationships between these tables. For instance, customers make orders, and orders contain items. These relationships need to be represented in the database. Also, when fetching data with SQL, we need to use certain types of JOIN queries to get what we need.
 - Types of SQL Relationships:
@@ -578,7 +578,7 @@ An exception (or exceptional event) is a problem that arises during the executio
   - Many to Many
     - many-to-many requires a link table containing two Foreign Key columns that reference the two different parent tables.
 
-### Normalization
+### [Normalization](https://www.edureka.co/blog/normalization-in-sql/)
 
 - It is the processes of reducing the redundancy of data in the table and also improving the data integrity. So why is this required? without Normalization in SQL, we may face many issues such as
   - Insertion anomaly:
