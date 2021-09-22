@@ -342,9 +342,9 @@ An exception (or exceptional event) is a problem that arises during the executio
   6. The web server sends the response back to the client and the client browser displays it on the screen.
 - Servlet Hierarchy
   - Servlet (I)
-  - Generic Servlet (AC)
-  - Http Servlet (AC)
-  - My Servlet (C)
+    - Generic Servlet (AC)
+      - Http Servlet (AC)
+        - My Servlet (C)
 - Servlet Lifycycle
   - Initialization
     - init()
@@ -384,27 +384,218 @@ An exception (or exceptional event) is a problem that arises during the executio
 
 ## Testing
 
-### JUnit
+### [JUnit](https://www.tutorialspoint.com/junit/index.htm)
 
-### Mockito
+- JUnit is a unit testing framework for Java programming language. JUnit has been important in the development of test-driven development, and is one of a family of unit testing frameworks collectively known as xUnit, that originated with JUnit.
+- JUnit promotes the idea of "first testing then coding", which emphasizes on setting up the test data for a piece of code that can be tested first and then implemented. This approach is like "test a little, code a little, test a little, code a little." This concept is called Test Driven Development, or TDD for short.
+- JUnit test framework provides the following important features:
+  - Fixtures
+    - Fixtures is a fixed state of a set of objects used as a baseline for running tests. The purpose of a test fixture is to ensure that there is a well-known and fixed environment in which tests are run so that results are repeatable. It includes:
+      - setUp() method, which runs before every test invocation
+      - tearDown() method, which runs after every test method.
+  - Test suites
+    - A test suite bundles a few unit test cases and runs them together. In JUnit, both @RunWith and @Suite annotation are used to run the suite test.
+  - Test runners
+    - The test runner is used for executing test cases.
+  - JUnit classes
+    - Assert
+      - Contains a set of assert methods.
+    - TestCase
+      - Contains a test case that defines the fixture to run multiple tests.
+    - TestResult
+      - Contains methods to collect the results of executing a test case.
+- Usage
+  - In order for a test class to be seen by the test runner, it should have the word "test" somewhere in its name.
+  - In order for a test method (test case) to be seen by the test runner, it should be placed inside of the test class and annotated with the @Test annotation.
+  - In order for it to be a fully functional test, your test methods should have some form of an assertion, a method that asserts that a result value matches your expected value. When assertions fail, your test fails; when it doesn't fail, the test passes. This is how we confirm that a class is behaving as expected.
+  - There are several assertion methods that we see commonly:
+    - assertEquals()
+    - assertFalse()
+    - assertTrue()
+    - assertNotNull()
+    - assertNull()
+
+### [Mockito](https://www.tutorialspoint.com/mockito/index.htm)
+
+- Mockito is a mocking framework, JAVA-based library that is used for effective unit testing of JAVA applications. Mockito is used to mock interfaces so that a dummy functionality can be added to a mock interface that can be used in unit testing.
+- Advantages
+  - Most times in Java development, we end up with classes that are dependent on other classes functionality or data. When trying to test the class, it would not be considered a unit test if we were also testing the subsequent dependency that the tested class was dependent on. I.e. if I'm testing a service class but most of the methods are dependent on data from a repository, we would be entirely dependent on the data sent back from our data access layer. As such, we utilize Mocking to provide mock values from the dependency so that we can focus our tests solely on a single unit or class.
+- Usage
+  - Creating a mock
+    - In your test class, in order to create a mock of an object, the code would be as follows:
+      > Class classNameMock = Mockito.mock(Class.class);
+    - The above code now allows this mock object to be used and minipulated during our following tests
+  - Supplying mock values from a mock object
+    - Once you have your mock object, you now need to describe some behavior or data for the mock object to return when a specific action takes place. We typically see this as when(some action).thenReturn(some value) instead of the actual value
+      > Mockito.when(classNameMock.methodA(data)).thenReturn(someValue)
+    - In the above example, you provide explicit return values for each method that with likely be called during the test suite
+    - For example, lets say we have a class that is dependent on classNameMock and a method that calls classNameMock.methodA() in its implementation. The code for calling the inital class method does not change, we are simply providing the data that is returned from the dependency.
 
 ## SQL
+
+- SQL stands for Structured Query Language. SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
 
 ### RDB Basics
 
 #### SQL Sublanguages
 
+- DDL – Data Definition Language.
+  - CREATE
+  - ALTER
+  - DROP
+  - TRUNCATE
+  - RENAME
+- DML – Data Manipulation Language.
+  - INSERT
+  - UPDATE
+  - DELETE
+- DRL/DQL – Data Retrieval Language/Data Query Language.
+  - SELECT
+- TCL – Transaction Query Language.
+  - COMMIT
+  - ROLLBACK
+  - SAVEPOINT
+  - ROLLBACK TO
+- DCL – Data Control Language.
+  - GRANT
+  - REVOKE
+  - AUDIT
+  - COMMENT
+  - ANALYZE
+- SCL – Session Control Language.
+  - ALTER SESSION
+  - SET ROLL
+
 #### Database Objects
+
+- Table
+  - This database object is used to create a table in database.
+- View
+  - This database object is used to create a view in database.A view is a logical table based on a table or another view. A view contains no data of its own but is like a window through which data from tables can be viewed or changed.
+- Sequence
+  - This database object is used to create a sequence in database.A sequence is a user created database object that can be shared by multiple users to generate unique integers. A typical usage for sequences is to create a primary key value, which must be unique for each row.
+- Index
+  - This database object is used to create a indexes in database. An index provides direct and fast access to rows in a table. Its purpose is to reduce the necessity of disk I/O by using an indexed path to locate data quickly.
 
 ### Joins
 
+- A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+- Different Types of SQL JOINs:
+  - (INNER) JOIN:
+    - Returns records that have matching values in both tables
+      > SELECT columns<br>
+      > FROM table1 <br>
+      > INNER JOIN table2<br>
+      > ON table1.column = table2.column;
+  - LEFT (OUTER) JOIN:
+    - Returns all records from the left table, and the matched records from the right table
+      > SELECT columns<br>
+      > FROM table1<br>
+      > LEFT JOIN table2<br>
+      > ON table1.column = table2.column;
+  - RIGHT (OUTER) JOIN:
+    - Returns all records from the right table, and the matched records from the left table
+      > SELECT columns<br>
+      > FROM table1<br>
+      > RIGHT JOIN table2<br>
+      > ON table1.column = table2.column;
+  - FULL (OUTER) JOIN:
+    - Returns all records when there is a match in either left or right table
+      > SELECT columns<br>
+      > FROM table1<br>
+      > FULL JOIN table2<br>
+      > ON table1.column = table2.column;
+
 ### Functions/Procedures
+
+- Functions
+  - For doing operations on data sql has many built-in functions, they are categorised in two categories and further sub-categorised in different seven functions under each category. The categories are:
+    - Aggregate functions:
+      - These functions are used to do operations from the values of the column and a single value is returned.
+        - AVG()
+        - COUNT()
+        - FIRST()
+        - LAST()
+        - MAX()
+        - MIN()
+        - SUM()
+    - Scalar functions:
+      - These functions are based on user input, these too returns single value.
+        - UCASE()
+        - LCASE()
+        - MID()
+        - LEN()
+        - ROUND()
+        - NOW()
+        - FORMAT()
+    - User Defined Functions:
+      - Users can also create their own functions to perform custom operations on data.
+- Procedures
+  - A procedure (often called a stored procedure) is a subroutine like a subprogram in a regular computing language, stored in database. SQL procedures can be used to create simple scripts for quickly querying transforming, updating data, generating basic reports, improve application performance, modularizing applications, and improve overall database design, and database security.
+  - Advantages
+    - Can contain SQL Procedural Language statements and features which support the implementation of control-flow logic around traditional static and dynamic SQL statements.
+    - Easy to implement, because they use a simple high-level, strongly-typed language.
+    - SQL procedures are more reliable than equivalent external procedures.
+    - Support input, output, and input-output parameter passing modes.
+    - Support a simple, but powerful condition and error-handling model.
+    - Return multiple results sets to the caller or to a client application.
+    - Allow you to easily access the SQLSTATE and SQLCODE values as special variables.
+    - Reside in the database and are automatically backed up and restored.
+    - Can be invoked wherever the CALL statement is supported.
+    - Support nested procedure calls to other SQL procedures or procedures implemented in other languages.
+  - Disadvantages
+    - Stored procedure languages are vendor specific. Therefore if you switch to another vendor's database, it requires to rewriting the existing stored procedures.
+    - Stored procedure languages from different vendors have different levels of sophistication. For example, Oracle's PL/SQL has more language features and built-in features than Microsoft's T-SQL.
+    - Tool support for writing and debugging stored procedures is often not as good as for other programming languages, though it depends on vendors and languages.
 
 ### Constraints
 
+- SQL constraints are used to specify rules for the data in a table. Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+- The following constraints are commonly used in SQL:
+  - NOT NULL
+    - Ensures that a column cannot have a NULL value
+  - UNIQUE
+    - Ensures that all values in a column are different
+  - PRIMARY KEY
+    - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+  - FOREIGN KEY
+    - Prevents actions that would destroy links between tables
+  - CHECK
+    - Ensures that the values in a column satisfies a specific condition
+  - DEFAULT
+    - Sets a default value for a column if no value is specified
+  - CREATE INDEX
+    - Used to create and retrieve data from the database very quickly
+
 ### Relationships
 
+- When creating a database, common sense dictates that we use separate tables for different types of entities. Some examples are: customers, orders, items, messages etc... But we also need to have relationships between these tables. For instance, customers make orders, and orders contain items. These relationships need to be represented in the database. Also, when fetching data with SQL, we need to use certain types of JOIN queries to get what we need.
+- Types of SQL Relationships:
+  - One to One
+    - One-to-one requires the child table Primary Key to be associated via a Foreign Key with the parent table Primary Key column.
+  - One to Many
+    - one-to-many is the most common relationship, and it associates a row from a parent table to multiple rows in a child table.
+  - Many to Many
+    - many-to-many requires a link table containing two Foreign Key columns that reference the two different parent tables.
+
 ### Normalization
+
+- It is the processes of reducing the redundancy of data in the table and also improving the data integrity. So why is this required? without Normalization in SQL, we may face many issues such as
+  - Insertion anomaly:
+    - It occurs when we cannot insert data to the table without the presence of another attribute
+  - Update anomaly:
+    - It is a data inconsistency that results from data redundancy and a partial update of data.
+  - Deletion Anomaly:
+    - It occurs when certain attributes are lost because of the deletion of other attributes.
+- Normal Forms
+  - 1st Normal Form (1NF)
+    - In this Normal Form, we tackle the problem of atomicity. Here atomicity means values in the table should not be further divided. In simple terms, a single cell cannot hold multiple values. If a table contains a composite or multi-valued attribute, it violates the First Normal Form.
+  - 2nd Normal Form (2NF)
+    - The first condition in the 2nd NF is that the table has to be in 1st NF. The table also should not contain partial dependency. Here partial dependency means the proper subset of candidate key determines a non-prime attribute.
+  - 3rd Normal Form (3NF)
+    - The same rule applies as before i.e, the table has to be in 2NF before proceeding to 3NF. The other condition is there should be no transitive dependency for non-prime attributes. That means non-prime attributes (which doesn’t form a candidate key) should not be dependent on other non-prime attributes in a given table. So a transitive dependency is a functional dependency in which X → Z (X determines Z) indirectly, by virtue of X → Y and Y → Z (where it is not the case that Y → X)
+  - Boyce Codd Normal Form (BCNF)
+    - This is also known as 3.5 NF. Its the higher version 3NF and was developed by Raymond F. Boyce and Edgar F. Codd to address certain types of anomalies which were not dealt with 3NF. Before proceeding to BCNF the table has to satisfy 3rd Normal Form. In BCNF if every functional dependency A → B, then A has to be the Super Key of that particular table.
 
 ## Spring Projects
 
