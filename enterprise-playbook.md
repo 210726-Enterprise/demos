@@ -289,13 +289,14 @@ An exception (or exceptional event) is a problem that arises during the executio
           &nbsp;&nbsp;&nbsp;&nbsp;TimeUnit.MILLISECONDS.sleep(300);<br>
           &nbsp;&nbsp;&nbsp;&nbsp;return "Task's execution";<br>
           };<br>
-          List<Callable<String>> callableTasks = new ArrayList<>();
+          List<Callable<String>> callableTasks = new ArrayList<>();<br>
+          <br>
           > callableTasks.add(callableTask);<br>
           > callableTasks.add(callableTask);<br>
-          > callableTasks.add(callableTask);<br>
-          > executorService.execute(runnableTask);<br>
-          > Future<String> future = executorService.submit(callableTask);<br>
-          > String result = executorService.invokeAny(callableTasks);<br>
+          > callableTasks.add(callableTask);<br><br>
+          > executorService.execute(runnableTask);<br><br>
+          > Future<String> future = executorService.submit(callableTask);<br><br>
+          > String result = executorService.invokeAny(callableTasks);<br><br>
           > List<Future<String>> futures = executorService.invokeAll(callableTasks);<br>
 
 ### [Reflection API](https://www.geeksforgeeks.org/reflection-in-java/)
