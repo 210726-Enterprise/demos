@@ -8,21 +8,18 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import { VoteComponent } from './components/vote/vote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ContactusComponent,
-    UserPageComponent
+    UserPageComponent,
+    VoteComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
