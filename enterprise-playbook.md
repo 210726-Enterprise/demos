@@ -22,15 +22,14 @@
     - [Constraints](#constraints)
     - [Relationships](#relationships)
     - [Normalization](#normalization)
-  - [Spring Projects](#spring-projects)
+  - [Spring Framework](#spring-framework)
     - [Spring Core](#spring-core)
     - [Spring MVC](#spring-mvc)
     - [Spring Boot](#spring-boot)
     - [Spring Data](#spring-data)
-    - [Spring Security](#spring-security)
   - [Web](#web)
     - [HTTP](#http)
-      - [HTTP Verbs](#http-verbs)
+      - [HTTP Verbs (request methods)](#http-verbs-request-methods)
       - [Status Codes](#status-codes)
     - [REST](#rest)
       - [Guiding Principles](#guiding-principles)
@@ -279,7 +278,7 @@ An exception (or exceptional event) is a problem that arises during the executio
       - invokeAll()
         - invokeAll() assigns a collection of tasks to an ExecutorService, causing each to run, and returns the result of all task executions in the form of a list of objects of type Future
           > ExecutorService executor = Executors.newFixedThreadPool(10);<br>
-          > Runnable runnableTask = () -> {<br> >&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+          > Runnable runnableTask = () -> {<br> &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TimeUnit.MILLISECONDS.sleep(300);<br>
               &nbsp;&nbsp;&nbsp;&nbsp;} catch (InterruptedException e) {<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();<br>
@@ -597,25 +596,256 @@ An exception (or exceptional event) is a problem that arises during the executio
   - Boyce Codd Normal Form (BCNF)
     - This is also known as 3.5 NF. Its the higher version 3NF and was developed by Raymond F. Boyce and Edgar F. Codd to address certain types of anomalies which were not dealt with 3NF. Before proceeding to BCNF the table has to satisfy 3rd Normal Form. In BCNF if every functional dependency A → B, then A has to be the Super Key of that particular table.
 
-## Spring Projects
+## [Spring Framework](https://spring.io/projects/spring-framework)
 
-### Spring Core
+- The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.
 
-### Spring MVC
+### [Spring Core](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html)
 
-### Spring Boot
+- The IoC Container
+  - IoC is also known as dependency injection (DI). It is a process whereby objects define their dependencies (that is, the other objects they work with) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean.
+  - There are two types of IoC containers:
+    - BeanFactory
+      - The BeanFactory is the actual container which instantiates, configures, and manages a number of beans. These beans typically collaborate with one another, and thus have dependencies between themselves. These dependencies are reflected in the configuration data used by the BeanFactory .
+      - A BeanFactory is represented by the interface org.springframework.beans.factory.BeanFactory, for which there are multiple implementations. The most commonly used simple BeanFactory implementation is org.springframework.beans.factory.xml.XmlBeanFactory.
+    - ApplicationContext
+      - The AppplicationContext is the interface for an advanced bean factory, thus it is built on top of BeanFactory and provides more advanced functionality.
+      - As the ApplicationContext includes all functionality of the BeanFactory, it is generally recommended that it be used over the BeanFactory, except for a few limited situations such as perhaps in an Applet, where memory consumption might be critical, and a few extra kilobytes might make a difference.
+      - The ApplicationContext lets youy read bean definitions and access them as the following example shows:
+        > // create and configure beans<br>
+        > ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");<br>
+        > // retrieve configured instance<br>
+        > PetStoreService service = context.getBean("petStore", PetStoreService.class);<br>
+        > // use configured instance<br>
+        > List<String> userList = service.getUsernameList();
+- Configuration Metadata
+  - This configuration metadata represents how you, as an application developer, tell the Spring container to instantiate, configure, and assemble the objects in your application. Configuration metadata is traditionally supplied in a simple and intuitive XML format, which is what most of this chapter uses to convey key concepts and features of the Spring IoC container.
+  - There are three main types of Metadata configuration:
+    - XML
+      > &lt;?xml version="1.0" encoding="UTF-8"?>
+      > &lt;beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans
+              https://www.springframework.org/schema/beans/spring-beans.xsd"><br>
+          &lt;bean id="..." class="...">
+              collaborators and configuration for this bean go here<br>
+          &lt;/bean><br>
+          &lt;bean id="..." class="..."><br>
+              collaborators and configuration for this bean go here<br>
+          &lt;/bean><br>
+          more bean definitions go here<br>
+      &lt;/beans>
+    - [Annotations](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-annotation-config)
+      - See the reference doc
+    - Java
+      - Basic Concepts:
+        - @Bean
+          - The @Bean annotation is used to indicate that a method instantiates, configures, and initializes a new object to be managed by the Spring IoC container. For those familiar with Spring’s <beans/> XML configuration, the @Bean annotation plays the same role as the <bean/> element. You can use @Bean-annotated methods with any Spring @Component. However, they are most often used with @Configuration beans.
+        - @Configuration
+          - Annotating a class with @Configuration indicates that its primary purpose is as a source of bean definitions. Furthermore, @Configuration classes let inter-bean dependencies be defined by calling other @Bean methods in the same class. The simplest possible @Configuration class reads as follows:
+            > @Configuration<br>
+            > public class AppConfig {<br> > &nbsp;&nbsp;&nbsp;&nbsp;@Bean<br> > &nbsp;&nbsp;&nbsp;&nbsp;public MyService myService() {<br> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return new MyServiceImpl();<br> > &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            > }
+        - @Autowired
+          - @Autowired allows Spring to resolve and inject collaborating beans into our bean.
+          - You can use @Autowired on
+            - Constructors
+              > public class FooService {<br> > &nbsp;&nbsp;&nbsp;&nbsp;private FooFormatter fooFormatter;<br> > &nbsp;&nbsp;&nbsp;&nbsp;@Autowired<br> > &nbsp;&nbsp;&nbsp;&nbsp;public void setFooFormatter(FooFormatter fooFormatter) {<br> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fooFormatter = fooFormatter;<br> > &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              > }
+            - Properties
+              > @Component<br>
+              > public class FooService { <br> > &nbsp;&nbsp;&nbsp;&nbsp;@Autowired<br> > &nbsp;&nbsp;&nbsp;&nbsp;private FooFormatter fooFormatter;<br>
+              > }
+            - A mix of both
+              > public class FooService {<br> > &nbsp;&nbsp;&nbsp;&nbsp;private FooFormatter fooFormatter;<br> > &nbsp;&nbsp;&nbsp;&nbsp;@Autowired<br> > &nbsp;&nbsp;&nbsp;&nbsp;private FooProperty fooProperty;<br> > &nbsp;&nbsp;&nbsp;&nbsp;@Autowired<br> > &nbsp;&nbsp;&nbsp;&nbsp;public void setFooFormatter(FooFormatter fooFormatter) {<br> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fooFormatter = fooFormatter;<br> > &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              > }
 
-### Spring Data
+### [Spring MVC](https://www.javatpoint.com/spring-mvc-tutorial)
 
-### Spring Security
+- A Spring MVC is a Java framework which is used to build web applications. It follows the Model-View-Controller design pattern. It implements all the basic features of a core spring framework like Inversion of Control, Dependency Injection.
+
+  - Artifacts of Spring MVC
+    - Model
+      - A model contains the data of the application. A data can be a single object or a collection of objects.
+    - Controller
+      - A controller contains the business logic of an application. Here, the @Controller annotation is used to mark the class as the controller.
+    - View
+      - A view represents the provided information in a particular format. Generally, JSP+JSTL is used to create a view page. Although spring also supports other view technologies such as Apache Velocity, Thymeleaf and FreeMarker.
+    - Front Controller
+      - In Spring Web MVC, the DispatcherServlet class works as the front controller. It is responsible to manage the flow of the Spring MVC application.
+  - Annotations
+
+    - @Controller
+      - Used to mark the class as a controller
+    - @RestController
+      - Combines the @Controller and @ResponseBody annotations allowing for a simpler implementation and cleaner code
+    - @RequestMapping
+      - Simply put, @RequestMapping marks request handler methods inside @Controller classes; it can be configured using:
+        - path, or its aliases, name, and value:
+          - which URL the method is mapped to
+        - method:
+          - compatible HTTP methods
+        - params:
+          - filters requests based on presence, absence, or value of HTTP parameters
+        - headers:
+          - filters requests based on presence, absence, or value of HTTP headers
+        - consumes:
+          - which media types the method can consume in the HTTP request body
+        - produces:
+          - which media types the method can produce in the HTTP response body
+    - @RequestBody
+      - maps the body of the HTTP request to an object
+    - @ResponseBody
+
+      - If we mark a request handler method with @ResponseBody, Spring treats the result of the method as the response itself. If we annotate a @Controller class with this annotation, all request handler methods will use it
+
+    - @PathVariable
+      - This annotation indicates that a method argument is bound to a URI template variable. We can specify the URI template with the @RequestMapping annotation and bind a method argument to one of the template parts with @PathVariable.
+    - @RequestParam
+      - We use @RequestParam for accessing HTTP request parameters. It has the same configuration options as the @PathVariable annotation. In addition to those settings, with @RequestParam we can specify an injected value when Spring finds no or empty value in the request. To achieve this, we have to set the defaultValue argument. Providing a default value implicitly sets required to false:
+    - @ExceptionHandler
+      - With this annotation, we can declare a custom error handler method. Spring calls this method when a request handler method throws any of the specified exceptions.
+    - @ResponseStatus
+      - We can specify the desired HTTP status of the response if we annotate a request handler method with this annotation. We can declare the status code with the code argument, or its alias, the value argument. Also, we can provide a reason using the reason argument.
+
+### [Spring Boot](https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm)
+
+- Spring Boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application that you can just run. You can get started with minimum configurations without the need for an entire Spring configuration setup.
+- Spring Boot automatically configures your application based on the dependencies you have added to the project by using @EnableAutoConfiguration annotation. For example, if MySQL database is on your classpath, but you have not configured any database connection, then Spring Boot auto-configures an in-memory database. The entry point of the spring boot application is the class contains @SpringBootApplication annotation and the main method. Spring Boot automatically scans all the components included in the project by using @ComponentScan annotation.
+- Spring Boot Starters:
+  - Spring Boot Starter Actuator
+    - used to monitor and manage your application.
+  - Spring Boot Starter Security
+    - used for Spring Security
+  - Spring Boot Starter web
+    - used to write Rest Endpoints.
+  - Spring Boot Starter Thyme Leaf
+    - used to create a web application.
+  - Spring Boot Starter Test
+    - used for writing Test cases.
+- Auto Configuration
+  - pring Boot Auto Configuration automatically configures your Spring application based on the JAR dependencies you added in the project. For example, if MySQL database is on your class path, but you have not configured any database connection, then Spring Boot auto configures an in-memory database.
+  - For this purpose, you need to add @EnableAutoConfiguration annotation or @SpringBootApplication annotation to your main class file. Then, your Spring Boot application will be automatically configured.
+    > import org.springframework.boot.SpringApplication;<br>
+    > import org.springframework.boot.autoconfigure.EnableAutoConfiguration;<br>
+    > @EnableAutoConfiguration<br>
+    > public class DemoApplication {<br> &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringApplication.run(DemoApplication.class, args);<br> &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    > }
+- Spring Boot Application
+  - The entry point of the Spring Boot Application is the class contains @SpringBootApplication annotation. This class should have the main method to run the Spring Boot application. @SpringBootApplication annotation includes Auto- Configuration, Component Scan, and Spring Boot Configuration.
+    > import org.springframework.boot.SpringApplication;<br>
+    > import org.springframework.boot.autoconfigure.SpringBootApplication;<br>
+    > @SpringBootApplication<br>
+    > public class DemoApplication {<br> &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringApplication.run(DemoApplication.class, args);<br> &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    > }
+
+### [Spring Data](https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa)
+
+- The DAO layer usually consists of a lot of boilerplate code that can and should be simplified. The advantages of such a simplification are many: a decrease in the number of artifacts that need to be defined and maintained, consistency of data access patterns and consistency of configuration. Spring Data takes this simplification one step forward and makes it possible to remove the DAO implementations entirely – the interface of the DAO is now the only artifact that needs to be explicitly defined. In order to start leveraging the Spring Data programming model with JPA, a DAO interface needs to extend the JPA specific Repository interface – JpaRepository. This will enable Spring Data to find this interface and automatically create an implementation for it.
+  By extending the interface we get the most relevant CRUD methods for standard data access available in a standard DAO out of the box.
+- Features:
+  - Sophisticated support to build repositories based on Spring and JPA
+  - Support for QueryDSL predicates and thus type-safe JPA queries
+  - Transparent auditing of domain class
+  - Pagination support, dynamic query execution, ability to integrate custom data access code
+  - Validation of @Query annotated queries at bootstrap time
+  - Support for XML based entity mapping
+  - JavaConfig based repository configuration by introducing @EnableJpaRepositories.
+- JpaRepository Methods:
+  - See [the reference docs](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html)
+  - To define more specific access methods, Spring JPA supports quite a few options – you can:
+    - Simply define a new method in the interface
+    - Provide the actual JPQ query by using the @Query annotation
+      > @Query("SELECT f FROM Foo f WHERE LOWER(f.name) = LOWER(:name)")<br>
+      > Foo retrieveByName(@Param("name") String name);
+    - Use the more advanced Specification and Querydsl support in Spring Data
+    - Define custom queries via JPA Named Queries
+      - Let’s look at an example: if the managed entity has a name field (and the Java Bean standard getName and setName methods), we’ll define the findByName method in the DAO interface; this will automatically generate the correct query:
+        > @Repository<br>
+        > public interface IFooDAO extends JpaRepository< Foo, Long >{<br> &nbsp;&nbsp;&nbsp;&nbsp;Foo findByName( String name );<br>
+        > }
 
 ## Web
 
-### HTTP
+### [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 
-#### HTTP Verbs
+- Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes. HTTP follows a classical client-server model, with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests.
 
-#### Status Codes
+#### HTTP Verbs (request methods)
+
+- GET
+  - The HTTP GET method requests a representation of the specified resource. Requests using GET should only be used to request data (they shouldn't include data).
+- POST
+  - The HTTP POST method sends data to the server. The type of the body of the request is indicated by the Content-Type header. A POST request is typically sent via an HTML form and results in a change on the server.
+- PUT
+  - The HTTP PUT request method creates a new resource or replaces a representation of the target resource with the request payload. The difference between PUT and POST is that PUT is idempotent: calling it once or several times successively has the same effect (that is no side effect), whereas successive identical POST requests may have additional effects, akin to placing an order several times.
+- DELETE
+  - The HTTP DELETE request method deletes the specified resource.
+- PATCH
+  - The HTTP PATCH request method applies partial modifications to a resource. PATCH is somewhat analogous to the "update" concept found in CRUD (in general, HTTP is different than CRUD, and the two should not be confused). A PATCH request is considered a set of instructions on how to modify a resource. Contrast this with PUT; which is a complete representation of a resource.
+- HEAD
+  - The HTTP HEAD method requests the headers that would be returned if the HEAD request's URL was instead requested with the HTTP GET method. For example, if a URL might produce a large download, a HEAD request could read its Content-Length header to check the filesize without actually downloading the file.
+- OPTIONS
+  - The HTTP OPTIONS method requests permitted communication options for a given URL or server. A client can specify a URL with this method, or an asterisk (\*) to refer to the entire server.
+- TRACE
+  - The HTTP TRACE method performs a message loop-back test along the path to the target resource, providing a useful debugging mechanism.
+
+#### [Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+- HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+  - Informational responses (100–199)
+    - 100 Continue
+      - This interim response indicates that everything so far is OK and that the client should continue the request, or ignore the response if the request is already finished.
+    - 101 Switching Protocol
+      - This code is sent in response to an Upgrade request header from the client, and indicates the protocol the server is switching to.
+    - 102 Processing (WebDAV)
+      - This code indicates that the server has received and is processing the request, but no response is available yet.
+    - 103 Early Hints
+      - This status code is primarily intended to be used with the Link header, letting the user agent start preloading resources while the server prepares a response.
+  - Successful responses (200–299)
+    - 200 OK
+      - The request has succeeded. The meaning of the success depends on the HTTP method:
+        - GET: The resource has been fetched and is transmitted in the message body.
+        - HEAD: The representation headers are included in the response without any message body.
+        - PUT or POST: The resource describing the result of the action is transmitted in the message body.
+        - TRACE: The message body contains the request message as received by the server.
+    - 201 Created
+      - The request has succeeded and a new resource has been created as a result. This is typically the response sent after POST requests, or some PUT requests.
+    - 202 Accepted
+      - The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.
+  - Redirects (300–399)
+    - 300 Multiple Choice
+      - The request has more than one possible response. The user-agent or user should choose one of them. (There is no standardized way of choosing one of the responses, but HTML links to the possibilities are recommended so the user can pick.)
+    - 301 Moved Permanently
+      - The URL of the requested resource has been changed permanently. The new URL is given in the response.
+    - 302 Found
+      - This response code means that the URI of requested resource has been changed temporarily. Further changes in the URI might be made in the future. Therefore, this same URI should be used by the client in future requests.
+    - 303 See Other
+      - The server sent this response to direct the client to get the requested resource at another URI with a GET request.
+    - 307 Temporary Redirect
+      - The server sends this response to direct the client to get the requested resource at another URI with same method that was used in the prior request. This has the same semantics as the 302 Found HTTP response code, with the exception that the user agent must not change the HTTP method used: If a POST was used in the first request, a POST must be used in the second request.
+    - 308 Permanent Redirect
+      - This means that the resource is now permanently located at another URI, specified by the Location: HTTP Response header. This has the same semantics as the 301 Moved Permanently HTTP response code, with the exception that the user agent must not change the HTTP method used: If a POST was used in the first request, a POST must be used in the second request.
+  - Client errors (400–499)
+    - 400 Bad Request
+      - The server could not understand the request due to invalid syntax.
+    - 401 Unauthorized
+      - Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+    - 403 Forbidden
+      - The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401, the client's identity is known to the server.
+    - 404 Not Found
+      - The server can not find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client. This response code is probably the most famous one due to its frequent occurrence on the web.
+    - 418 I'm a teapot
+      - The server refuses the attempt to brew coffee with a teapot.
+  - Server errors (500–599)
+    - 500 Internal Server Error
+      - The server has encountered a situation it doesn't know how to handle.
+    - 501 Not Implemented
+      - The request method is not supported by the server and cannot be handled. The only methods that servers are required to support (and therefore that must not return this code) are GET and HEAD.
+    - 502 Bad Gateway
+      - This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.
+    - 503 Service Unavailable
+      - The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This response should be used for temporary conditions and the Retry-After: HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.
 
 ### REST
 
